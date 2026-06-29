@@ -33,6 +33,6 @@ class Graph:
         return self.graph
     
     def __call__(self): 
-        pass
+        return self.build_graph()
 
     # __call__ method is used to make an instance of a class callable. It allows the instance to be called as if it were a function. When you call an instance of a class, Python will automatically invoke the __call__ method of that instance. In other words, it allows you to use the instance as a function, passing arguments to it and receiving a return value. This can be useful for creating objects that behave like functions or for implementing certain design patterns.
