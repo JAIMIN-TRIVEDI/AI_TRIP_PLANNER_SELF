@@ -1,5 +1,5 @@
 
-from utils.model_loader import ModelLoader
+from LANGRAPH.AI_TRIP_PLANNER_SELF.utils.model_load import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 from langgraph.graph import StateGraph, MessagesState, END, START
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -38,6 +38,7 @@ class GraphBuilder():
         input_question = [self.system_prompt] + user_question
         response = self.llm_with_tools.invoke(input_question)
         return {"messages": [response]}
+    
     def build_graph(self):
         graph_builder=StateGraph(MessagesState)
         graph_builder.add_node("agent", self.agent_function)
